@@ -1,0 +1,35 @@
+{
+  "name": "dsh-when-broke",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AAAlenwow/dsh-when-broke.git"
+  },
+  "description": "Git regression finder for DSH: find the commit that introduced a string, bisect with a repro command, list recent risky changes, and get blame ages. 4 tools, zero npm dependencies.",
+  "keywords": ["deepseek-harness","dsh","dsh-plugin","git","bisect","blame","regression"],
+  "license": "MIT",
+  "type": "module",
+  "main": "./lib/host.js",
+  "exports": {
+    ".": "./lib/host.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "cordis.patch.yml",
+    "lib",
+    "tests",
+    "README.md",
+    "REPORT.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "compatibility": {
+      "dsh": ">=0.1.7-alpha.1",
+      "profiles": [
+        "web"
+      ]
+    }
+  }
+}

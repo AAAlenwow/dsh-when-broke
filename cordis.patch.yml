@@ -1,0 +1,6 @@
+# dsh-when-broke — standalone host entry.
+# Also shipped inside the dsh-ai-armor bundle (loader id there: ai-armor).
+# Do NOT install both: the bundle already registers these tools.
+- insert:
+    - id: when-broke
+      name: dsh-when-broke

@@ -1,0 +1,5 @@
+{
+  "ok": true,
+  "firstBad.shortHash": "6358d36",
+  "firstBad.subject": "refactor: divide returns (a - b) instead of (a / b)"
+}

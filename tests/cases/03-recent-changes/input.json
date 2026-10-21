@@ -1,0 +1,9 @@
+{
+  "tool": "recent_changes",
+  "args": {
+    "file": "src/calculator.js",
+    "limit": 10,
+    "daysBack": 3650,
+    "cwd": "sample-app"
+  }
+}

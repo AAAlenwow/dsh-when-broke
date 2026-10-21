@@ -1,0 +1,6 @@
+{
+  "ok": true,
+  "mode": "pickaxe",
+  "introducer.subject": "refactor: divide returns (a - b) instead of (a / b)",
+  "introducer.shortHash": "6358d36"
+}

@@ -1,0 +1,10 @@
+{
+  "tool": "bisect_with_repro",
+  "args": {
+    "good": "12fad53",
+    "bad": "59ffba9",
+    "repro": "node test/divide.test.js",
+    "cwd": "sample-app",
+    "timeoutMs": 30000
+  }
+}
