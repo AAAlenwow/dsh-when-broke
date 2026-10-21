@@ -1,6 +1,6 @@
 # dsh-when-broke — Measured Report
 
-Generated: 2026-10-21T04:00:51.893Z
+Generated: 2026-10-21T04:17:28.033Z
 Node: v22.22.2, Platform: darwin/arm64
 Repo: https://github.com/AAAlenwow/dsh-ai-armor/tree/main/plugins/dsh-when-broke
 
@@ -14,17 +14,17 @@ Repo: https://github.com/AAAlenwow/dsh-ai-armor/tree/main/plugins/dsh-when-broke
 
 | 工具 | 用途 | 平均延迟 | 平均输出 chars | 平均 tokens |
 |---|---|---|---|---|
-| `find_introducer` | 定位代码首次出现的 commit | 7.5ms | 374 | 118 |
-| `bisect_with_repro` | 用 bisect 二分定位引入 bug 的 commit | 109.0ms | 654 | 205 |
-| `recent_changes` | 列出文件最近改动并按风险排序 | 7.9ms | 1272 | 398 |
-| `blame_age` | 查询单行代码的作者与年龄 | 11.2ms | 432 | 135 |
+| `find_introducer` | 定位代码首次出现的 commit | 8.1ms | 374 | 118 |
+| `bisect_with_repro` | 用 bisect 二分定位引入 bug 的 commit | 124.2ms | 654 | 205 |
+| `recent_changes` | 列出文件最近改动并按风险排序 | 7.7ms | 1272 | 398 |
+| `blame_age` | 查询单行代码的作者与年龄 | 15.0ms | 432 | 135 |
 
 ## 每个用例的明细
 
 ### 01-find-introducer — `find_introducer` ✅
 
 - 输入: `{"file":"/Users/hechao/Documents/deepseek-harness/default-workspace/subpkg-work/repos/dsh-when-broke/tests/cases/01-find-introducer/sample-app/src/calculator.js","pickaxe":"return a - b","cwd":"/Users/hechao/Documents/deepseek-harness/default-workspace/subpkg-work/repos/dsh-when-broke/tests/cases/01-find-introducer/sample-app"}`
-- 延迟: **12ms**
+- 延迟: **12.3ms**
 - 输出大小: 685 chars / ~215 tokens (高估 274, 低估 153)
 - 断言:
   - ✓ `ok` = `true` (期望 `true`)
@@ -52,7 +52,7 @@ Repo: https://github.com/AAAlenwow/dsh-ai-armor/tree/main/plugins/dsh-when-broke
 ### 02-bisect — `bisect_with_repro` ✅
 
 - 输入: `{"good":"12fad53","bad":"59ffba9","repro":"node test/divide.test.js","cwd":"/Users/hechao/Documents/deepseek-harness/default-workspace/subpkg-work/repos/dsh-when-broke/tests/cases/02-bisect/sample-app","timeoutMs":30000}`
-- 延迟: **109ms**
+- 延迟: **124.2ms**
 - 输出大小: 654 chars / ~205 tokens (高估 262, 低估 146)
 - 断言:
   - ✓ `ok` = `true` (期望 `true`)
@@ -71,7 +71,7 @@ Repo: https://github.com/AAAlenwow/dsh-ai-armor/tree/main/plugins/dsh-when-broke
     "date": "2024-01-01T00:00:00Z"
   },
   "stepsRemaining": null,
-  "elapsedMs": 105,
+  "elapsedMs": 120,
   "log": [
     "bisect start",
     "bisect bad 59ffba9",
@@ -86,7 +86,7 @@ Repo: https://github.com/AAAlenwow/dsh-ai-armor/tree/main/plugins/dsh-when-broke
 ### 03-recent-changes — `recent_changes` ✅
 
 - 输入: `{"file":"/Users/hechao/Documents/deepseek-harness/default-workspace/subpkg-work/repos/dsh-when-broke/tests/cases/03-recent-changes/sample-app/src/calculator.js","limit":10,"daysBack":3650,"cwd":"/Users/hechao/Documents/deepseek-harness/default-workspace/subpkg-work/repos/dsh-when-broke/tests/cases/03-recent-changes/sample-app"}`
-- 延迟: **7.9ms**
+- 延迟: **7.7ms**
 - 输出大小: 1272 chars / ~398 tokens (高估 509, 低估 283)
 - 断言:
   - ✓ `ok` = `true` (期望 `true`)
@@ -149,7 +149,7 @@ Repo: https://github.com/AAAlenwow/dsh-ai-armor/tree/main/plugins/dsh-when-broke
 ### 04-blame-age — `blame_age` ✅
 
 - 输入: `{"file":"/Users/hechao/Documents/deepseek-harness/default-workspace/subpkg-work/repos/dsh-when-broke/tests/cases/04-blame-age/sample-app/src/calculator.js","line":11,"cwd":"/Users/hechao/Documents/deepseek-harness/default-workspace/subpkg-work/repos/dsh-when-broke/tests/cases/04-blame-age/sample-app"}`
-- 延迟: **11.2ms**
+- 延迟: **15ms**
 - 输出大小: 432 chars / ~135 tokens (高估 173, 低估 96)
 - 断言:
   - ✓ `ok` = `true` (期望 `true`)
@@ -178,7 +178,7 @@ Repo: https://github.com/AAAlenwow/dsh-ai-armor/tree/main/plugins/dsh-when-broke
 ### 05-edge — `find_introducer` ✅
 
 - 输入: `{"file":"/Users/hechao/Documents/deepseek-harness/default-workspace/subpkg-work/repos/dsh-when-broke/tests/cases/05-edge/not-a-repo/hello.txt","pickaxe":"hello","cwd":"/Users/hechao/Documents/deepseek-harness/default-workspace/subpkg-work/repos/dsh-when-broke/tests/cases/05-edge/not-a-repo"}`
-- 延迟: **3.1ms**
+- 延迟: **3.8ms**
 - 输出大小: 62 chars / ~20 tokens (高估 25, 低估 14)
 - 断言:
   - ✓ `ok` = `false` (期望 `false`)

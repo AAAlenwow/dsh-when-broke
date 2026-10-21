@@ -25,6 +25,14 @@ const pluginRoot = resolve(here, "..");
 const casesDir = join(here, "cases");
 const reportPath = join(pluginRoot, "REPORT.md");
 
+// The published package itself is a git repository. Without a ceiling, git
+// discovery from inside a case fixture (e.g. cases/05-edge/not-a-repo)
+// bubbles up to this package's own .git, so "am I inside a git repo?"
+// checks give false positives and the 05-edge case can never pass on a
+// fresh clone. Ceiling at the cases dir: fixtures that need a repo build
+// their own (cases/01-04 sample-apps), so nothing above casesDir is wanted.
+process.env.GIT_CEILING_DIRECTORIES = casesDir;
+
 function dirname(p) { return p.substring(0, p.lastIndexOf("/")); }
 
 const results = [];
